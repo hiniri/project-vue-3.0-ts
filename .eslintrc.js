@@ -13,13 +13,27 @@ module.exports = {
     quotes: [1, 'single'],
     semi: [2, 'never'],
     'space-before-function-paren': [0, 'always'],
-    'comma-dangle': [2, 'never']
+    'comma-dangle': [2, 'never'],
+    'vue/script-indent': [
+      'error',
+      2,
+      {
+        baseIndent: 1,
+        switchCase: 0,
+        ignores: []
+      }
+    ]
   },
   overrides: [
     {
       files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
       env: {
         mocha: true
+      }
+    },{
+      "files": ["*.vue"],
+      "rules": {
+        "indent": "off",
       }
     }
   ]
