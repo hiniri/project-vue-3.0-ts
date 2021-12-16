@@ -4,4 +4,12 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
-createApp(App).use(store).use(router).mount('#app')
+//
+const appInstance = createApp(App)
+appInstance.use(store)
+appInstance.use(router)
+
+//
+const rootInstance = appInstance.mount('#app')
+
+console.log(appInstance, rootInstance)
