@@ -96,13 +96,16 @@
           >awesome-vue</a
         ></li
       >
+      <li>
+        {{ getDate() }}
+      </li>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
   import { Options, Vue } from 'vue-class-component'
-
+  import { formatDate } from '@/utils/dates'
   @Options({
     props: {
       msg: String
@@ -110,6 +113,9 @@
   })
   export default class HelloWorld extends Vue {
     msg!: string
+    getDate(): string {
+      return formatDate(new Date())
+    }
   }
 </script>
 
